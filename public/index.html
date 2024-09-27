@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Upload de Arquivos</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="icon" href="imgs/logo.png" type="image/png" />
+    </head>
+    <body>
+        <header>
+            <h1>Upload de Arquivos</h1>
+        </header>
+        <main>
+            <section>
+                <h2>Enviar Arquivo</h2>
+                <form id="uploadForm">
+                    <label for="fileInput">Escolha um arquivo:</label>
+                    <input
+                        type="file"
+                        id="fileInput"
+                        name="file"
+                        multiple
+                        required
+                    />
+                    <button type="submit">Enviar</button>
+                    <progress id="progressBar" max="100" value="0"></progress>
+                    <div id="uploadResult"></div>
+                </form>
+            </section>
+            <section>
+                <h2>Arquivos Disponíveis <span id="fileCount"></span></h2>
+                <form id="searchForm">
+                    <label for="searchInput">Buscar:</label>
+                    <input
+                        type="text"
+                        id="searchInput"
+                        name="search"
+                        placeholder="Buscar arquivos..."
+                    />
+                    <button type="submit">Buscar</button>
+                </form>
+                <div id="filters">
+                    <label for="filterType">Filtrar por tipo:</label>
+                    <select id="filterType" name="filterType">
+                        <option value="">Todos</option>
+                        <option value="image">Imagens</option>
+                        <option value="document">Documentos</option>
+                        <option value="video">Vídeos</option>
+                    </select>
+                </div>
+                <table id="fileTable">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Excluir</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+            <section>
+                <h2>Ações</h2>
+                <button id="refreshFiles">Atualizar</button>
+                <button id="deleteAll">Apagar todos os arquivos</button>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 Upload de Arquivos</p>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>
